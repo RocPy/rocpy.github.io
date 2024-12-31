@@ -10,22 +10,26 @@
       
       
       
+        <link rel="canonical" href="https://rocpy.org/contact/">
+      
+      
+        <link rel="prev" href="../code_of_conduct/">
       
       
       
-      <link rel="icon" href="/img/favicon.ico">
+      <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>RocPy — Rochester's Python User Group</title>
+        <title>Contact Us - RocPy — Rochester's Python User Group</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="/css/extra.css">
+      <link rel="stylesheet" href="../css/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#contact-us" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,9 +92,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="RocPy — Rochester&#39;s Python User Group" class="md-header__button md-logo" aria-label="RocPy — Rochester's Python User Group" data-md-component="logo">
+    <a href=".." title="RocPy — Rochester&#39;s Python User Group" class="md-header__button md-logo" aria-label="RocPy — Rochester's Python User Group" data-md-component="logo">
       
-  <img src="/img/rocpy-logo-small.png" alt="logo">
+  <img src="../img/rocpy-logo-small.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -102,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Contact Us
             
           </span>
         </div>
@@ -242,14 +251,14 @@
   <!-- Site title -->
   <label class="md-nav__title" for="__drawer">
     <a
-      href="/."
+      href=".."
       title="RocPy — Rochester&#39;s Python User Group"
       class="md-nav__button md-logo"
       aria-label="RocPy — Rochester's Python User Group"
       data-md-component="logo"
     >
       
-  <img src="/img/rocpy-logo-small.png" alt="logo">
+  <img src="../img/rocpy-logo-small.png" alt="logo">
 
     </a>
     RocPy — Rochester's Python User Group
@@ -280,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -300,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/code_of_conduct/" class="md-nav__link">
+      <a href="../code_of_conduct/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -317,10 +326,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/contact/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -329,6 +347,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -350,6 +369,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -361,8 +382,150 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="contact-us">Contact Us</h1>
+<script>
+  const form = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const messageStatus = document.getElementById("messageStatus");
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    // Clear old messages & set button state
+    messageStatus.style.display = "none";
+    messageStatus.classList.remove("success", "error");
+    messageStatus.textContent = "";
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const json = await response.json();
+
+      if (json.success) {
+        // Show success block
+        messageStatus.textContent = "✓ Message sent successfully!";
+        messageStatus.classList.add("success");
+        messageStatus.style.display = "block";
+
+        // Optionally reset the form
+        form.reset();
+      } else {
+        // Show error block
+        messageStatus.textContent =
+          "✗ An error occurred: " + (json.message || "Please try again later.");
+        messageStatus.classList.add("error");
+        messageStatus.style.display = "block";
+      }
+    } catch (error) {
+      // Network or unexpected error
+      messageStatus.textContent = "✗ Could not send message. " + error.message;
+      messageStatus.classList.add("error");
+      messageStatus.style.display = "block";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Send Message";
+    }
+  });
+</script>
+
+<p><form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class="contact-form"
+  id="contactForm"
+>
+  <!-- 1) Your Access Key from Web3Forms -->
+  <input type="hidden" name="access_key" value="9c04327a-dea1-4938-8b84-37de91941a7b" />
+
+  <!-- Uncomment below to test emails without sending them -->
+  <!-- <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"> -->
+
+  <!-- 2) Optional honeypot field for spam control -->
+  <input type="hidden" name="honeypot" value="" />
+
+  <!-- Optional: But Recommended: To Prevent SPAM Submission.  Make sure its hidden by default -->
+  <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+  <!-- 3) Remove the redirect if you want a single-page (AJAX) submission -->
+  <!-- <input type="hidden" name="redirect" value="https://example.com/thank-you" /> -->
+
+  <!-- 4) Form "from" name -->
+  <input type="hidden" name="RocPy Contact Noticfication" value="Mission Control">
+
+  <div class="input-group">
+    <label for="name">Name</label>
+    <input 
+      type="text" 
+      name="name" 
+      id="name" 
+      placeholder="Your Name" 
+      required
+    />
+  </div>
+
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input 
+      type="email" 
+      name="email" 
+      id="email" 
+      placeholder="Your Email" 
+      required
+    />
+  </div>
+
+  <div class="input-group">
+    <label for="subject">Subject</label>
+    <input
+        type="text"
+        name="subject"
+        id="subject"
+        placeholder="Subject"
+        required
+    />
+  </div>
+
+  <div class="input-group">
+    <label for="message">Message</label>
+    <textarea 
+      name="message" 
+      id="message" 
+      rows="5" 
+      placeholder="Your message" 
+      required
+    ></textarea>
+  </div>
+
+  <button type="submit" id="submitBtn">Send Message</button>
+</form>
+</p>
+<!-- Hidden by default; shown on success or error -->
+<div id="messageStatus" class="message-status" style="display: none;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -445,10 +608,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
