@@ -10,13 +10,11 @@
       
       
       
-        <link rel="canonical" href="https://rocpy.org/contact/">
+        <link rel="canonical" href="https://rocpy.org/join/">
       
       
-        <link rel="prev" href="../code_of_conduct/">
+        <link rel="prev" href="../contact/">
       
-      
-        <link rel="next" href="../join/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -24,7 +22,7 @@
     
     
       
-        <title>Contact Us - RocPy — Rochester's Python User Group</title>
+        <title>Join RocPy - RocPy — Rochester's Python User Group</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#contact-us" class="md-skip">
+        <a href="#join-rocpy" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contact Us
+              Join RocPy
             
           </span>
         </div>
@@ -348,6 +346,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -364,32 +382,12 @@
         
   
   <span class="md-ellipsis">
-    Contact Us
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../join/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
     Join RocPy
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -430,131 +428,24 @@
   
 
 
-<h1 id="contact-us">Contact Us</h1>
-<p><form
-  action="https://api.web3forms.com/submit"
-  method="POST"
-  class="contact-form"
-  id="contactForm"
->
-  <!-- 1) Your Access Key from Web3Forms -->
-  <input type="hidden" name="access_key" value="9c04327a-dea1-4938-8b84-37de91941a7b" />
-
-  <!-- Uncomment below to test emails without sending them -->
-  <!-- <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"> -->
-
-  <!-- 2) Optional honeypot field for spam control -->
-  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-  <!-- Optional: But Recommended: To Prevent SPAM Submission.  Make sure its hidden by default -->
-  <input type="checkbox" name="botcheck" id="" style="display: none;">
-
-  <!-- 3) Remove the redirect if you want a single-page (AJAX) submission -->
-  <!-- <input type="hidden" name="redirect" value="https://example.com/thank-you" /> -->
-
-  <!-- 4) Form "from" name -->
-  <input type="hidden" name="from_name" value="RocPy Contact Notification">
-
-  <div class="input-group">
-    <label for="name">Name</label>
-    <input 
-      type="text" 
-      name="name" 
-      id="name" 
-      placeholder="Your Name" 
-      required
-    />
-  </div>
-
-  <div class="input-group">
-    <label for="email">Email</label>
-    <input 
-      type="email" 
-      name="email" 
-      id="email" 
-      placeholder="Your Email" 
-      required
-    />
-  </div>
-
-  <div class="input-group">
-    <label for="subject">Subject</label>
-    <input
-        type="text"
-        name="subject"
-        id="subject"
-        placeholder="Subject"
-        required
-    />
-  </div>
-
-  <div class="input-group">
-    <label for="message">Message</label>
-    <textarea 
-      name="message" 
-      id="message" 
-      rows="5" 
-      placeholder="Your message" 
-      required
-    ></textarea>
-  </div>
-
-  <button type="submit" id="submitBtn">Send Message</button>
-</form>
-</p>
-<!-- Hidden by default; shown on success or error -->
-<div id="messageStatus" class="message-status" style="display: none;"></div>
-
-<script>
-  const form = document.getElementById("contactForm");
-  const submitBtn = document.getElementById("submitBtn");
-  const messageStatus = document.getElementById("messageStatus");
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    // Clear old messages & set button state
-    messageStatus.style.display = "none";
-    messageStatus.classList.remove("success", "error");
-    messageStatus.textContent = "";
-    submitBtn.disabled = true;
-    submitBtn.innerText = "Sending...";
-
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-      const json = await response.json();
-
-      if (json.success) {
-        // Show success block
-        messageStatus.textContent = "✓ Message sent successfully!";
-        messageStatus.classList.add("success");
-        messageStatus.style.display = "block";
-
-        // Optionally reset the form
-        form.reset();
-      } else {
-        // Show error block
-        messageStatus.textContent =
-          "✗ An error occurred: " + (json.message || "Please try again later.");
-        messageStatus.classList.add("error");
-        messageStatus.style.display = "block";
-      }
-    } catch (error) {
-      // Network or unexpected error
-      messageStatus.textContent = "✗ Could not send message. " + error.message;
-      messageStatus.classList.add("error");
-      messageStatus.style.display = "block";
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerText = "Send Message";
-    }
-  });
-</script>
+<h1 id="join-rocpy">Join RocPy</h1>
+<p>We use <a href="https://www.meetup.com/Rochester-Python-Meetup/">Meetup.com to organize our events</a>. Join us there to get notified of upcoming events.</p>
+<div  class="calltoaction minimal">
+        <div class="D_boxbody">
+                <form action="https://www.meetup.com/Rochester-Python-Meetup/join/" method="post">
+                        <div  class="D_boxhead">
+                                <p>You'll get invited to our Meetups as soon as they're scheduled!</p>
+                        </div>
+                        <div class="D_boxsection ">
+                                <input type="submit" name="submit" value="Join us!" class="D_submit"  />
+                                <input type="hidden" name="returnUri" value="https://www.meetup.com/Rochester-Python-Meetup" />
+                                <input type="hidden" name="returnUriEnc" value="https%3A%2F%2Fwww.meetup.com%2FRochester-Python-Meetup" id="returnUriEnc" />
+                                <input type="hidden" name="submit" value="1" />
+                        </div>
+                        <div style="clear: both; height: 1px; line-height: 1px;"></div>
+                </form>
+        </div>
+</div>
 
 
 
